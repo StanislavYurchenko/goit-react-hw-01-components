@@ -1,8 +1,11 @@
 import React from 'react';
 import Profile from '../Profile/Profile.js';
 import Statistics from '../Statistics/Statistics.js';
+import FriendList from '../FriendList/FriendList.js';
+import FriendListItem from '../FriendListItem/FriendListItem.js';
 import user from '../../data/user.json';
 import statisticalData from '../../data/statistical-data.json';
+import friends from '../../data/friends.json';
 import styles from './App.module.css';
 import './App.scss';
 
@@ -14,6 +17,11 @@ function App() {
       </div>
       <div className={styles.box}>
         <Statistics title="Upload stats" stats={statisticalData} />
+      </div>
+      <div className={styles.box}>
+        <FriendList>
+          <FriendListItem friends={friends} />
+        </FriendList>
       </div>
     </div>
   );

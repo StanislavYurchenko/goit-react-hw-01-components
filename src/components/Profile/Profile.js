@@ -33,6 +33,7 @@ const Location = styled.div`
   font-weight: 300;
 `;
 const List = styled.ul`
+  margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -42,6 +43,7 @@ const List = styled.ul`
 `;
 const ListItem = styled.ul`
   padding: 15px 0;
+  flex-basis: auto;
   width: 33.333%;
   cursor: pointer;
   &:hover {

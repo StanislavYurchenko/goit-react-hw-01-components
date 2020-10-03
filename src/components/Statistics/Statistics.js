@@ -18,55 +18,84 @@ const Title = styled.h2`
   padding: 30px;
   margin: 0;
 `;
-const List = styled.ul``;
-const ListItem = styled.ul``;
-const ListLabel = styled.span``;
-const ListPercentage = styled.span``;
+const List = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  border-top: 1px solid grey;
+  text-align: center;
+`;
+const ListItem = styled.ul`
+  padding: 10px 0;
+  flex-basis: auto;
+  width: 25%;
+  color: #fff;
+`;
+const ListItemBlue = styled(ListItem)`
+  background-color: blue;
+`;
+const ListItemPurple = styled(ListItem)`
+  background-color: purple;
+`;
+const ListItemRed = styled(ListItem)`
+  background-color: Red;
+`;
+const ListItemGreen = styled(ListItem)`
+  background-color: Green;
+`;
+const ListLabel = styled.span`
+  display: block;
+  font-size: 12px;
+
+  padding-bottom: 10px;
+`;
+const ListPercentage = styled.span`
+  display: block;
+`;
 
 function Statistics({ title, stats }) {
   return (
     <Container>
-      <Title>Upload stats</Title>
+      <Title>{title}</Title>
 
       <List>
-        <ListItem>
-          <ListLabel>.docx</ListLabel>
-          <ListPercentage>4%</ListPercentage>
-        </ListItem>
-        <ListItem>
-          <ListLabel>.mp3</ListLabel>
-          <ListPercentage>14%</ListPercentage>
-        </ListItem>
-        <ListItem>
-          <ListLabel>.pdf</ListLabel>
-          <ListPercentage>41%</ListPercentage>
-        </ListItem>
-        <ListItem>
-          <ListLabel>.mp4</ListLabel>
-          <ListPercentage>12%</ListPercentage>
-        </ListItem>
+        <ListItemBlue>
+          <ListLabel>{stats[0].label}</ListLabel>
+          <ListPercentage>{stats[0].percentage}%</ListPercentage>
+        </ListItemBlue>
+        <ListItemPurple>
+          <ListLabel>{stats[1].label}</ListLabel>
+          <ListPercentage>{stats[1].percentage}%</ListPercentage>
+        </ListItemPurple>
+        <ListItemRed>
+          <ListLabel>{stats[2].label}</ListLabel>
+          <ListPercentage>{stats[2].percentage}%</ListPercentage>
+        </ListItemRed>
+        <ListItemGreen>
+          <ListLabel>{stats[3].label}</ListLabel>
+          <ListPercentage>{stats[3].percentage}%</ListPercentage>
+        </ListItemGreen>
       </List>
     </Container>
   );
 }
 
-// Statistics.defaultProps = {
-//   location: 'unknown',
-//   avatar: 'unknown',
-// };
+Statistics.defaultProps = {
+  title: 'STATS',
+};
 
-// Statistics.propTypes = {
-//   user: PropTypes.exact({
-//     name: string.isRequired,
-//     tag: string.isRequired,
-//     location: string,
-//     avatar: string,
-//     stats: PropTypes.exact({
-//       followers: number.isRequired,
-//       views: number.isRequired,
-//       likes: number.isRequired,
-//     }).isRequired,
-//   }),
-// };
+Statistics.propTypes = {
+  title: string,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: string.isRequired,
+      label: string.isRequired,
+      percentage: number.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default Statistics;
