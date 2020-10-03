@@ -3,9 +3,11 @@ import Profile from '../Profile/Profile.js';
 import Statistics from '../Statistics/Statistics.js';
 import FriendList from '../FriendList/FriendList.js';
 import FriendListItem from '../FriendListItem/FriendListItem.js';
+import TransactionHistory from '../TransactionHistory/TransactionHistory.js';
 import user from '../../data/user.json';
 import statisticalData from '../../data/statistical-data.json';
 import friends from '../../data/friends.json';
+import transactions from '../../data/transactions.json';
 import styles from './App.module.css';
 import './App.scss';
 
@@ -22,6 +24,9 @@ function App() {
         <FriendList>
           <FriendListItem friends={friends} />
         </FriendList>
+      </div>
+      <div className={styles.box}>
+        <TransactionHistory items={transactions} />
       </div>
     </div>
   );

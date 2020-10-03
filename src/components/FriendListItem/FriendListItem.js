@@ -16,7 +16,7 @@ const Status = styled.span`
   display: block;
   width: 10px;
   height: 10px;
-  background-color: green;
+  background-color: ${props => (props.isOnline ? 'green' : 'red')};
   border-radius: 50%;
   margin-right: 10px;
 `;
@@ -27,7 +27,7 @@ const Avatar = styled.img`
 function FriendList({ friends }) {
   return friends.map(frend => (
     <ListItem key={frend.id}>
-      <Status></Status>
+      <Status isOnline={frend.isOnline}></Status>
       <Avatar src={frend.avatar} alt={frend.name} width="48" />
       <p>{frend.name}</p>
     </ListItem>
