@@ -1,0 +1,16 @@
+@value red-color from '../../vars.module.css';
+
+.App {
+}
+.container {
+  /* outline: 1px solid red-color; */
+  /* padding: 15px; */
+}
+.box {
+  composes: container;
+  background-color: #f5f5f5;
+}
+
+.books {
+  /* composes: container; */
+}
