@@ -10,7 +10,6 @@ import statisticalData from '../../data/statistical-data.json';
 import friends from '../../data/friends.json';
 import transactions from '../../data/transactions.json';
 
-const Container = styled.div``;
 const Box = styled.div`
   background-color: #f5f5f5;
   padding: 10px;
@@ -38,10 +37,3 @@ function App() {
 }
 
 export default App;
-
-// {
-//   "id": "1e0700a2-5183-4291-85cc-2065a036a683",
-//   "type": "invoice",
-//   "amount": "964.82",
-//   "currency": "LRD"
-// },
