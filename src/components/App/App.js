@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Profile from '../Profile/Profile.js';
 import Statistics from '../Statistics/Statistics.js';
 import FriendList from '../FriendList/FriendList.js';
@@ -8,27 +9,31 @@ import user from '../../data/user.json';
 import statisticalData from '../../data/statistical-data.json';
 import friends from '../../data/friends.json';
 import transactions from '../../data/transactions.json';
-import styles from './App.module.css';
-import './App.scss';
+
+const Container = styled.div``;
+const Box = styled.div`
+  background-color: #f5f5f5;
+  padding: 10px;
+`;
 
 function App() {
   return (
-    <div className={styles.container}>
-      <div className={styles.box}>
+    <>
+      <Box>
         <Profile user={user} />
-      </div>
-      <div className={styles.box}>
+      </Box>
+      <Box>
         <Statistics title="Upload stats" stats={statisticalData} />
-      </div>
-      <div className={styles.box}>
+      </Box>
+      <Box>
         <FriendList>
           <FriendListItem friends={friends} />
         </FriendList>
-      </div>
-      <div className={styles.box}>
+      </Box>
+      <Box>
         <TransactionHistory items={transactions} />
-      </div>
-    </div>
+      </Box>
+    </>
   );
 }
 

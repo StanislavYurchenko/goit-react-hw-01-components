@@ -7,7 +7,6 @@ const List = styled.ul`
   font-family: Helvetica, Arial, sans-serif;
   color: #24292e;
   background-color: #fff;
-
   max-width: 250px;
   margin: 0 auto;
   text-align: center;
