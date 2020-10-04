@@ -33,3 +33,10 @@ function App() {
 }
 
 export default App;
+
+// {
+//   "id": "1e0700a2-5183-4291-85cc-2065a036a683",
+//   "type": "invoice",
+//   "amount": "964.82",
+//   "currency": "LRD"
+// },
