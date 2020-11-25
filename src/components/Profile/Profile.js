@@ -18,6 +18,7 @@ const Description = styled.div`
 const Avatar = styled.img`
   margin: 0 auto 30px;
   border-radius: 50%;
+  width: 100px;
 `;
 const Name = styled.div`
   font-size: 18px;
