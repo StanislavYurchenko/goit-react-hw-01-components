@@ -1,21 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import friends from '../../data/friends.json';
+import FriendListItem from './FriendListItem/FriendListItem';
+import { List } from './FriendListStyles';
 
-const List = styled.ul`
-  display: block;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #24292e;
-  background-color: #fff;
-  max-width: 250px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0;
-  list-style: none;
-`;
-
-function FriendList({ children }) {
-  return <List>{children}</List>;
+function FriendList() {
+  return (
+    <List>
+      <FriendListItem friends={friends} />
+    </List>
+  );
 }
 
 FriendList.propTypes = {
